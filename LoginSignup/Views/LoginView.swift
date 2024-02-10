@@ -5,9 +5,17 @@
 //  Created by Nicola Kaleta on 10/02/2024.
 //
 
+enum FocusedField {
+    case email
+    case password
+}
+
 import SwiftUI
 
 struct LoginView: View {
+    @State private var emailText = ""
+    @FocusState private var focusedField: FocusedField?
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -21,6 +29,17 @@ struct LoginView: View {
                     .foregroundStyle(.black)
                     .multilineTextAlignment(.center)
                     .padding(.bottom)
+                
+                TextField("Email", text: $emailText)
+                    .focused($focusedField, equals: .email)
+                    .padding()
+                    .background(.secondaryBlue)
+                    .cornerRadius(12)
+                    .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.primaryBlue, lineWidth: 3)
+                    )
+                    .padding(.horizontal)
                 
             }
         }
