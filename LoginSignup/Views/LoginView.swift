@@ -37,7 +37,8 @@ struct LoginView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(.black)
                     .multilineTextAlignment(.center)
-                    .padding(.bottom)
+                    .padding(.bottom, 80)
+                
                 
                 TextField("Email", text: $emailText)
                     .focused($focusedField, equals: .email)
@@ -52,6 +53,8 @@ struct LoginView: View {
                     .onChange(of: emailText) { newValue in
                         isValidEmail = Validator.validateEmail(newValue)
                     }
+                    .padding(.bottom, isValidEmail ? 16 : 0)
+                    
                 if !isValidEmail {
                     HStack {
                         Text("Your email is not valid!")
@@ -59,6 +62,7 @@ struct LoginView: View {
                             .padding(.leading)
                         Spacer()
                     }
+                    .padding(.bottom)
                 }
                 
                 SecureField("Password", text: $passwordText)
@@ -93,6 +97,7 @@ struct LoginView: View {
                             .font(.system(size: 14, weight: .semibold))
                     }
                     .padding(.trailing)
+                    .padding()
                 }
                 
                 Button {
@@ -122,7 +127,7 @@ struct LoginView: View {
                 .cornerRadius(12)
                 .padding(.horizontal)
                 
-                BottomView()
+                BottomView(googleAction: {}, facebookAction: {}, appleAction: {})
             }
         }
     }
@@ -134,6 +139,10 @@ struct LoginView: View {
 
 
 struct BottomView: View {
+    var googleAction: () -> Void
+    var facebookAction: () -> Void
+    var appleAction: () -> Void
+    
     var body: some View {
         VStack{
             Text("Or continue with")
@@ -143,21 +152,21 @@ struct BottomView: View {
             
             HStack {
                 Button {
-                    
+                    googleAction()
                 } label: {
                     Image("google-logo")
                 }
                 .iconButtonStyle
                 
                 Button {
-                    
+                    facebookAction()
                 } label: {
                     Image("facebook-logo")
                 }
                 .iconButtonStyle
                 
                 Button {
-                    
+                    appleAction()
                 } label: {
                     Image("apple-logo")
                 }
