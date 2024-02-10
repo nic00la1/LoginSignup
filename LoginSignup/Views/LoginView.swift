@@ -39,7 +39,7 @@ struct LoginView: View {
                     .cornerRadius(12)
                     .background(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(focusedField == .email ? .primaryBlue : .white , lineWidth: 3)
+                        .stroke(!isValidEmail ? .red : focusedField == .email ? .primaryBlue : .white , lineWidth: 3)
                     )
                     .padding(.horizontal)
                     .onChange(of: emailText) { newValue in
