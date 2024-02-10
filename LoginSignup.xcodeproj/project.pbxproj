@@ -11,6 +11,7 @@
 		B3FEACBC2B77ADCD0072001A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACBB2B77ADCD0072001A /* ContentView.swift */; };
 		B3FEACBE2B77ADCE0072001A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEACBD2B77ADCE0072001A /* Assets.xcassets */; };
 		B3FEACC12B77ADCE0072001A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEACC02B77ADCE0072001A /* Preview Assets.xcassets */; };
+		B3FEACC92B77AEEA0072001A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACC82B77AEEA0072001A /* Validations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B3FEACBB2B77ADCD0072001A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3FEACBD2B77ADCE0072001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FEACC02B77ADCE0072001A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3FEACC82B77AEEA0072001A /* Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		B3FEACB82B77ADCD0072001A /* LoginSignup */ = {
 			isa = PBXGroup;
 			children = (
+				B3FEACC72B77AEEA0072001A /* helper */,
 				B3FEACB92B77ADCD0072001A /* LoginSignupApp.swift */,
 				B3FEACBB2B77ADCD0072001A /* ContentView.swift */,
 				B3FEACBD2B77ADCE0072001A /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				B3FEACC02B77ADCE0072001A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3FEACC72B77AEEA0072001A /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				B3FEACC82B77AEEA0072001A /* Validations.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FEACBC2B77ADCD0072001A /* ContentView.swift in Sources */,
+				B3FEACC92B77AEEA0072001A /* Validations.swift in Sources */,
 				B3FEACBA2B77ADCD0072001A /* LoginSignupApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
