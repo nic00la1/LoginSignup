@@ -34,4 +34,25 @@ class AppService {
             return .error(error.localizedDescription)
         }
     }
+    
+    func login(email: String, password: String) async throws -> RequestStatus {
+        do {
+            _ = try await account.createEmailSession(email: email, password: password)
+            return .success
+            
+        } catch {
+            return .error(error.localizedDescription)
+        }
+    }
+    
+    func logout() async throws -> RequestStatus {
+        do {
+            _ = try await account.deleteSession(sessionId: "currentSession")
+            return .success
+            
+        } catch {
+            return .error(error.localizedDescription)
+        }
+    }
+
 }
