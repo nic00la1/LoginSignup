@@ -122,6 +122,7 @@ struct LoginView: View {
                 .cornerRadius(12)
                 .padding(.horizontal)
                 
+                BottomView()
             }
         }
     }
@@ -129,4 +130,49 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+}
+
+
+struct BottomView: View {
+    var body: some View {
+        VStack{
+            Text("Or continue with")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.primaryBlue)
+                .padding(.bottom)
+            
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image("google-logo")
+                }
+                .iconButtonStyle
+                
+                Button {
+                    
+                } label: {
+                    Image("facebook-logo")
+                }
+                .iconButtonStyle
+                
+                Button {
+                    
+                } label: {
+                    Image("apple-logo")
+                }
+                .iconButtonStyle
+            }
+        }
+    }
+}
+
+
+extension View {
+    var iconButtonStyle: some View {
+        self
+            .padding()
+            .background(.lightGray)
+            .cornerRadius(8)
+    }
 }
