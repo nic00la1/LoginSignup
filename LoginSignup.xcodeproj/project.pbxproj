@@ -12,8 +12,9 @@
 		B3FEACBE2B77ADCE0072001A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEACBD2B77ADCE0072001A /* Assets.xcassets */; };
 		B3FEACC12B77ADCE0072001A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEACC02B77ADCE0072001A /* Preview Assets.xcassets */; };
 		B3FEACC92B77AEEA0072001A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACC82B77AEEA0072001A /* Validations.swift */; };
-		B3FEACCB2B77B2A10072001A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACCA2B77B2A10072001A /* LoginView.swift */; };
 		B3FEACCD2B77B2B70072001A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACCC2B77B2B70072001A /* RegistrationView.swift */; };
+		B3FEACD02B77D8280072001A /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACCF2B77D8280072001A /* EmailTextField.swift */; };
+		B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD12B77DA8E0072001A /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +24,9 @@
 		B3FEACBD2B77ADCE0072001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FEACC02B77ADCE0072001A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3FEACC82B77AEEA0072001A /* Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
-		B3FEACCA2B77B2A10072001A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B3FEACCC2B77B2B70072001A /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		B3FEACCF2B77D8280072001A /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		B3FEACD12B77DA8E0072001A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +87,10 @@
 		B3FEACCE2B77B2C30072001A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B3FEACD12B77DA8E0072001A /* LoginView.swift */,
 				B3FEACBB2B77ADCD0072001A /* WelcomeView.swift */,
-				B3FEACCA2B77B2A10072001A /* LoginView.swift */,
 				B3FEACCC2B77B2B70072001A /* RegistrationView.swift */,
+				B3FEACCF2B77D8280072001A /* EmailTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,9 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */,
 				B3FEACBC2B77ADCD0072001A /* WelcomeView.swift in Sources */,
 				B3FEACC92B77AEEA0072001A /* Validations.swift in Sources */,
-				B3FEACCB2B77B2A10072001A /* LoginView.swift in Sources */,
+				B3FEACD02B77D8280072001A /* EmailTextField.swift in Sources */,
 				B3FEACBA2B77ADCD0072001A /* LoginSignupApp.swift in Sources */,
 				B3FEACCD2B77B2B70072001A /* RegistrationView.swift in Sources */,
 			);

@@ -39,31 +39,7 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 80)
                 
-                
-                TextField("Email", text: $emailText)
-                    .focused($focusedField, equals: .email)
-                    .padding()
-                    .background(.secondaryBlue)
-                    .cornerRadius(12)
-                    .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(!isValidEmail ? .red : focusedField == .email ? .primaryBlue : .white , lineWidth: 3)
-                    )
-                    .padding(.horizontal)
-                    .onChange(of: emailText) { newValue in
-                        isValidEmail = Validator.validateEmail(newValue)
-                    }
-                    .padding(.bottom, isValidEmail ? 16 : 0)
-                    
-                if !isValidEmail {
-                    HStack {
-                        Text("Your email is not valid!")
-                            .foregroundStyle(.red)
-                            .padding(.leading)
-                        Spacer()
-                    }
-                    .padding(.bottom)
-                }
+                EmailTextField(emailText: $emailText, isValidEmail: $isValidEmail)
                 
                 SecureField("Password", text: $passwordText)
                     .focused($focusedField, equals: .password)
