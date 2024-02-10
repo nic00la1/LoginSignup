@@ -45,7 +45,14 @@ struct LoginView: View {
                     .onChange(of: emailText) { newValue in
                         isValidEmail = Validator.validateEmail(newValue)
                     }
-                
+                if !isValidEmail {
+                    HStack {
+                        Text("Your Email is not valid!")
+                            .foregroundStyle(.red)
+                            .padding(.leading)
+                        Spacer()
+                    }
+                }
             }
         }
     }
