@@ -16,6 +16,8 @@ struct LoginView: View {
     @State private var emailText = ""
     @FocusState private var focusedField: FocusedField?
     
+    @State private var isValidEmail = true
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -37,9 +39,12 @@ struct LoginView: View {
                     .cornerRadius(12)
                     .background(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(.primaryBlue, lineWidth: 3)
+                        .stroke(focusedField == .email ? .primaryBlue : .white , lineWidth: 3)
                     )
                     .padding(.horizontal)
+                    .onChange(of: emailText) { newValue in
+                        isValidEmail = Validator.validateEmail(newValue)
+                    }
                 
             }
         }
