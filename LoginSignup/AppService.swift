@@ -21,8 +21,8 @@ class AppService {
     
     let account: Account
     
-    init(account: Account) {
-        self.account = account
+    init() {
+        account = Account(client)
     }
     
     func createUser(email: String, password: String) async throws -> RequestStatus {

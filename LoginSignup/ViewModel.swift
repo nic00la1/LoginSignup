@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class ViewModel: ObservableObject {
     private let service: AppService
     @Published var showAlert = false
@@ -40,7 +41,7 @@ class ViewModel: ObservableObject {
     
     func login(email: String, password: String) async throws {
         isLoading = true
-        let status = try await service.logout()
+        let status = try await service.login(email: email, password: password)
         
         switch status {
         case .success:
@@ -57,6 +58,7 @@ class ViewModel: ObservableObject {
     
     func logout() async throws {
         isLoading = true
+        let status = try await service.logout()
         
         switch status {
         case .success:
