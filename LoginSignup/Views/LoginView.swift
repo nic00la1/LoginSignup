@@ -19,6 +19,10 @@ struct LoginView: View {
     @State private var isValidEmail = true
     @State private var isValidPassword = true
     
+    var canProceed: Bool {
+        Validator.validateEmail(emailText) && Validator.validatePassword(passwordText)
+    }
+    
     @FocusState private var focusedField: FocusedField?
     
     var body: some View {
@@ -90,6 +94,21 @@ struct LoginView: View {
                     }
                     .padding(.trailing)
                 }
+                
+                Button {
+                    
+                } label: {
+                    Text("Sign in")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(.white)
+                }
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
+                .background(.primaryBlue)
+                .cornerRadius(12)
+                .padding(.horizontal)
+                .opacity(canProceed ? 1.0 : 0.5)
+                .disabled(!canProceed)
             }
         }
     }
