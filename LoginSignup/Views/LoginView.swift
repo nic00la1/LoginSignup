@@ -53,6 +53,7 @@ struct LoginView: View {
                         Text("Your email is not valid!")
                             .foregroundStyle(.red)
                             .padding(.leading)
+                        Spacer()
                     }
                 }
                 
@@ -76,6 +77,18 @@ struct LoginView: View {
                             .padding(.leading)
                         Spacer()
                     }
+                }
+                
+                HStack {
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        Text("Forgot your password?")
+                            .foregroundStyle(.primaryBlue)
+                            .font(.system(size: 14, weight: .semibold))
+                    }
+                    .padding(.trailing)
                 }
             }
         }
