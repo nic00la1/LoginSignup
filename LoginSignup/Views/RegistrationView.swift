@@ -55,7 +55,9 @@ struct RegistrationView: View {
                     Spacer()
                     
                     Button {
-                        
+                        Task {
+                            try? await viewModel.createUser(email: emailText, password: passwordText)
+                        }
                     } label: {
                         Text("Sign up")
                             .font(.system(size: 20, weight: .semibold))
@@ -71,10 +73,7 @@ struct RegistrationView: View {
                     
                     
                     Button {
-                        Task {
-                            try? await viewModel.createUser(email: emailText, password: passwordText)
-                            
-                        }
+                        // action
                     } label: {
                         Text("Already have an account")
                             .font(.system(size: 20, weight: .semibold))
