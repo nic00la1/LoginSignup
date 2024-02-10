@@ -10,12 +10,15 @@ import SwiftUI
 struct PasswordTextField: View {
     @Binding var passwordText: String
     @Binding var isValidPassword: Bool
+    let validatePassword: (String) -> Bool
+    let errorText: String
+    let placeholder: String
     
     @FocusState var focusedField: FocusedField?
     
     var body: some View {
         VStack {
-            SecureField("Password", text: $passwordText)
+            SecureField(placeholder, text: $passwordText)
                 .focused($focusedField, equals: .password)
                 .padding()
                 .background(.secondaryBlue)
@@ -26,11 +29,11 @@ struct PasswordTextField: View {
                 )
                 .padding(.horizontal)
                 .onChange(of: passwordText) { newValue in
-                    isValidPassword = Validator.validatePassword(newValue)
+                    isValidPassword = validatePassword(newValue)
                 }
             if !isValidPassword {
                 HStack {
-                    Text("Your password is not valid!")
+                    Text(errorText)
                         .foregroundStyle(.red)
                         .padding(.leading)
                     Spacer()
@@ -42,5 +45,5 @@ struct PasswordTextField: View {
 }
 
 #Preview {
-    PasswordTextField(passwordText: .constant(""), isValidPassword: .constant(true))
+    PasswordTextField(passwordText: .constant(""), isValidPassword: .constant(true), validatePassword: Validator.validatePassword, errorText: "Your password is not valid", placeholder: "Password")
 }

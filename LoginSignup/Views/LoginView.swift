@@ -41,7 +41,7 @@ struct LoginView: View {
                 
                 EmailTextField(emailText: $emailText, isValidEmail: $isValidEmail)
                 
-                PasswordTextField(passwordText: $passwordText, isValidPassword: $isValidPassword)
+                PasswordTextField(passwordText: $passwordText, isValidPassword: $isValidPassword, validatePassword: Validator.validatePassword, errorText: "Your password is not valid", placeholder: "Password")
                 
                 HStack {
                     Spacer()
