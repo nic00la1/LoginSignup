@@ -11,6 +11,16 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Text("Login here")
+                    .font(.system(size: 30, weight: .bold))
+                    .foregroundStyle(.primaryBlue)
+                    .padding(.bottom)
+                
+                Text("Welcome back you've\n been missed!")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(.black)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom)
                 
             }
         }
