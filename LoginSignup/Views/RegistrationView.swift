@@ -16,7 +16,8 @@ struct RegistrationView: View {
     @State private var isConfirmPasswordValid = true
     
     var canProceed: Bool {
-        Validator.validateEmail(emailText) && Validator.validatePassword(passwordText)
+        Validator.validateEmail(emailText) && Validator.validatePassword(passwordText) &&
+        validateConfirm(confirmPasswordText)
     }
     
     @FocusState private var focusedField: FocusedField?
@@ -64,7 +65,7 @@ struct RegistrationView: View {
                 Button {
                     
                 } label: {
-                    Text("Create new account")
+                    Text("Already have an account")
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(.gray)
                 }
