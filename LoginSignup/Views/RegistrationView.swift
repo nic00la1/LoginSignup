@@ -18,6 +18,8 @@ struct RegistrationView: View {
     @State private var isValidPassword = true
     @State private var isConfirmPasswordValid = true
     
+    @State private var showSheet = false
+    
     var canProceed: Bool {
         Validator.validateEmail(emailText) && Validator.validatePassword(passwordText) &&
         validateConfirm(confirmPasswordText)
@@ -73,7 +75,7 @@ struct RegistrationView: View {
                     
                     
                     Button {
-                        // action
+                        showSheet.toggle()
                     } label: {
                         Text("Already have an account")
                             .font(.system(size: 20, weight: .semibold))
@@ -101,6 +103,9 @@ struct RegistrationView: View {
             }
         } message: {
             Text(viewModel.alertMessage)
+        }
+        .sheet(isPresented: $showSheet) {
+            LoginView()
         }
     }
     
