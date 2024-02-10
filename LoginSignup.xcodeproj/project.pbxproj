@@ -17,6 +17,9 @@
 		B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD12B77DA8E0072001A /* LoginView.swift */; };
 		B3FEACD62B77DB130072001A /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD52B77DB130072001A /* PasswordTextField.swift */; };
 		B3FEACD82B77DBF50072001A /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD72B77DBF50072001A /* BottomView.swift */; };
+		B3FEACDB2B77E7630072001A /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = B3FEACDA2B77E7630072001A /* Appwrite */; };
+		B3FEACDE2B77E8660072001A /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACDD2B77E8660072001A /* AppService.swift */; };
+		B3FEACE02B77E8870072001A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACDF2B77E8870072001A /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		B3FEACD12B77DA8E0072001A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B3FEACD52B77DB130072001A /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		B3FEACD72B77DBF50072001A /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		B3FEACDC2B77E7A90072001A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B3FEACDD2B77E8660072001A /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppService.swift; path = LoginSignup/AppService.swift; sourceTree = SOURCE_ROOT; };
+		B3FEACDF2B77E8870072001A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FEACDB2B77E7630072001A /* Appwrite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +70,14 @@
 		B3FEACB82B77ADCD0072001A /* LoginSignup */ = {
 			isa = PBXGroup;
 			children = (
+				B3FEACDD2B77E8660072001A /* AppService.swift */,
+				B3FEACDC2B77E7A90072001A /* Info.plist */,
 				B3FEACCE2B77B2C30072001A /* Views */,
 				B3FEACC72B77AEEA0072001A /* helper */,
 				B3FEACB92B77ADCD0072001A /* LoginSignupApp.swift */,
 				B3FEACBD2B77ADCE0072001A /* Assets.xcassets */,
 				B3FEACBF2B77ADCE0072001A /* Preview Content */,
+				B3FEACDF2B77E8870072001A /* ViewModel.swift */,
 			);
 			path = LoginSignup;
 			sourceTree = "<group>";
@@ -125,6 +135,9 @@
 			dependencies = (
 			);
 			name = LoginSignup;
+			packageProductDependencies = (
+				B3FEACDA2B77E7630072001A /* Appwrite */,
+			);
 			productName = LoginSignup;
 			productReference = B3FEACB62B77ADCD0072001A /* LoginSignup.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +166,9 @@
 				Base,
 			);
 			mainGroup = B3FEACAD2B77ADCD0072001A;
+			packageReferences = (
+				B3FEACD92B77E7630072001A /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+			);
 			productRefGroup = B3FEACB72B77ADCD0072001A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,7 +195,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FEACE02B77E8870072001A /* ViewModel.swift in Sources */,
 				B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */,
+				B3FEACDE2B77E8660072001A /* AppService.swift in Sources */,
 				B3FEACBC2B77ADCD0072001A /* WelcomeView.swift in Sources */,
 				B3FEACD62B77DB130072001A /* PasswordTextField.swift in Sources */,
 				B3FEACD82B77DBF50072001A /* BottomView.swift in Sources */,
@@ -322,6 +340,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LoginSignup/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoginSignup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -350,6 +369,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LoginSignup/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoginSignup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -390,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3FEACD92B77E7630072001A /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3FEACDA2B77E7630072001A /* Appwrite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3FEACD92B77E7630072001A /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
+			productName = Appwrite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3FEACAE2B77ADCD0072001A /* Project object */;
 }
