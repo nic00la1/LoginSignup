@@ -41,27 +41,7 @@ struct LoginView: View {
                 
                 EmailTextField(emailText: $emailText, isValidEmail: $isValidEmail)
                 
-                SecureField("Password", text: $passwordText)
-                    .focused($focusedField, equals: .password)
-                    .padding()
-                    .background(.secondaryBlue)
-                    .cornerRadius(12)
-                    .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(!isValidPassword ? .red : focusedField == .password ? .primaryBlue : .white , lineWidth: 3)
-                    )
-                    .padding(.horizontal)
-                    .onChange(of: passwordText) { newValue in
-                        isValidPassword = Validator.validatePassword(newValue)
-                    }
-                if !isValidPassword {
-                    HStack {
-                        Text("Your password is not valid!")
-                            .foregroundStyle(.red)
-                            .padding(.leading)
-                        Spacer()
-                    }
-                }
+                PasswordTextField(passwordText: $passwordText, isValidPassword: $isValidPassword)
                 
                 HStack {
                     Spacer()
@@ -111,53 +91,4 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-}
-
-
-struct BottomView: View {
-    var googleAction: () -> Void
-    var facebookAction: () -> Void
-    var appleAction: () -> Void
-    
-    var body: some View {
-        VStack{
-            Text("Or continue with")
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(.primaryBlue)
-                .padding(.bottom)
-            
-            HStack {
-                Button {
-                    googleAction()
-                } label: {
-                    Image("google-logo")
-                }
-                .iconButtonStyle
-                
-                Button {
-                    facebookAction()
-                } label: {
-                    Image("facebook-logo")
-                }
-                .iconButtonStyle
-                
-                Button {
-                    appleAction()
-                } label: {
-                    Image("apple-logo")
-                }
-                .iconButtonStyle
-            }
-        }
-    }
-}
-
-
-extension View {
-    var iconButtonStyle: some View {
-        self
-            .padding()
-            .background(.lightGray)
-            .cornerRadius(8)
-    }
 }

@@ -15,6 +15,8 @@
 		B3FEACCD2B77B2B70072001A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACCC2B77B2B70072001A /* RegistrationView.swift */; };
 		B3FEACD02B77D8280072001A /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACCF2B77D8280072001A /* EmailTextField.swift */; };
 		B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD12B77DA8E0072001A /* LoginView.swift */; };
+		B3FEACD62B77DB130072001A /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD52B77DB130072001A /* PasswordTextField.swift */; };
+		B3FEACD82B77DBF50072001A /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACD72B77DBF50072001A /* BottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		B3FEACCC2B77B2B70072001A /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		B3FEACCF2B77D8280072001A /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		B3FEACD12B77DA8E0072001A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B3FEACD52B77DB130072001A /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		B3FEACD72B77DBF50072001A /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +91,22 @@
 		B3FEACCE2B77B2C30072001A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B3FEACD42B77DAEE0072001A /* Login-Fields */,
 				B3FEACD12B77DA8E0072001A /* LoginView.swift */,
 				B3FEACBB2B77ADCD0072001A /* WelcomeView.swift */,
 				B3FEACCC2B77B2B70072001A /* RegistrationView.swift */,
-				B3FEACCF2B77D8280072001A /* EmailTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B3FEACD42B77DAEE0072001A /* Login-Fields */ = {
+			isa = PBXGroup;
+			children = (
+				B3FEACCF2B77D8280072001A /* EmailTextField.swift */,
+				B3FEACD52B77DB130072001A /* PasswordTextField.swift */,
+				B3FEACD72B77DBF50072001A /* BottomView.swift */,
+			);
+			path = "Login-Fields";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +181,8 @@
 			files = (
 				B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */,
 				B3FEACBC2B77ADCD0072001A /* WelcomeView.swift in Sources */,
+				B3FEACD62B77DB130072001A /* PasswordTextField.swift in Sources */,
+				B3FEACD82B77DBF50072001A /* BottomView.swift in Sources */,
 				B3FEACC92B77AEEA0072001A /* Validations.swift in Sources */,
 				B3FEACD02B77D8280072001A /* EmailTextField.swift in Sources */,
 				B3FEACBA2B77ADCD0072001A /* LoginSignupApp.swift in Sources */,
