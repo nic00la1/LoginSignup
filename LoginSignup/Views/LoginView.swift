@@ -14,9 +14,12 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var emailText = ""
-    @FocusState private var focusedField: FocusedField?
+    @State private var passwordText = ""
     
     @State private var isValidEmail = true
+    @State private var isValidPassword = true
+    
+    @FocusState private var focusedField: FocusedField?
     
     var body: some View {
         NavigationStack {
@@ -47,7 +50,28 @@ struct LoginView: View {
                     }
                 if !isValidEmail {
                     HStack {
-                        Text("Your Email is not valid!")
+                        Text("Your email is not valid!")
+                            .foregroundStyle(.red)
+                            .padding(.leading)
+                    }
+                }
+                
+                SecureField("Password", text: $passwordText)
+                    .focused($focusedField, equals: .password)
+                    .padding()
+                    .background(.secondaryBlue)
+                    .cornerRadius(12)
+                    .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(!isValidPassword ? .red : focusedField == .password ? .primaryBlue : .white , lineWidth: 3)
+                    )
+                    .padding(.horizontal)
+                    .onChange(of: passwordText) { newValue in
+                        isValidPassword = Validator.validatePassword(newValue)
+                    }
+                if !isValidPassword {
+                    HStack {
+                        Text("Your password is not valid!")
                             .foregroundStyle(.red)
                             .padding(.leading)
                         Spacer()
