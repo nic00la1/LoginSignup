@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var presentNextView = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -34,7 +36,7 @@ struct ContentView: View {
                 HStack(spacing: 12) {
                     
                     Button {
-                        // action
+                        presentNextView.toggle()
                     } label: {
                         Text("Login")
                             .font(.system(size: 20, weight: .semibold))
@@ -57,6 +59,9 @@ struct ContentView: View {
                 }
                 
                 Spacer()
+            }
+            .navigationDestination(isPresented: $presentNextView) {
+                Text("Siema")
             }
             .padding()
         }
