@@ -7,8 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+enum ViewStack {
+    case login
+    case registration
+}
+
+struct WelcomeView: View {
     @State private var presentNextView = false
+    @State private var nextView: ViewStack = .login
     
     var body: some View {
         NavigationStack {
@@ -36,6 +42,7 @@ struct ContentView: View {
                 HStack(spacing: 12) {
                     
                     Button {
+                        nextView = .login
                         presentNextView.toggle()
                     } label: {
                         Text("Login")
@@ -47,7 +54,8 @@ struct ContentView: View {
                     .cornerRadius(12)
                     
                     Button {
-                        // action
+                        nextView = .registration
+                        presentNextView.toggle()
                     } label: {
                         Text("Register")
                             .font(.system(size: 20, weight: .semibold))
@@ -60,14 +68,19 @@ struct ContentView: View {
                 
                 Spacer()
             }
-            .navigationDestination(isPresented: $presentNextView) {
-                Text("Siema")
-            }
             .padding()
+            .navigationDestination(isPresented: $presentNextView) {
+                switch nextView {
+                case .login:
+                    LoginView()
+                case .registration:
+                    RegistrationView()
+                }
+            }
         }
     }
 }
 
 #Preview {
-    ContentView()
+    WelcomeView()
 }
