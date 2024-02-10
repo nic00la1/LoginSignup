@@ -109,6 +109,19 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .opacity(canProceed ? 1.0 : 0.5)
                 .disabled(!canProceed)
+                
+                Button {
+                    
+                } label: {
+                    Text("Create new account")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(.gray)
+                }
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(12)
+                .padding(.horizontal)
+                
             }
         }
     }
