@@ -7,6 +7,11 @@
 
 import Appwrite
 
+enum RequestStatus {
+    case success
+    case error(_ message: String)
+}
+
 class AppService {
     
     let client = Client()
@@ -18,5 +23,15 @@ class AppService {
     
     init(account: Account) {
         self.account = account
+    }
+    
+    func createUser(email: String, password: String) async throws -> RequestStatus {
+        do {
+            _ = try await account.create(userId: ID.unique(), email: email, password: password)
+            return .success
+            
+        } catch {
+            return .error(error.localizedDescription)
+        }
     }
 }
