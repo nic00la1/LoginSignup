@@ -92,6 +92,7 @@ struct RegistrationView: View {
                 }
                 .opacity(viewModel.isLoading ? 0.5 : 1.0)
             }
+            .navigationBarBackButtonHidden(true)
         }
         .alert(viewModel.hasError ? "Error" : "Success", isPresented: $viewModel.showAlert) {
             if viewModel.hasError {

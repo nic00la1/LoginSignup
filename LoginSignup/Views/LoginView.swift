@@ -98,8 +98,9 @@ struct LoginView: View {
                 .opacity(viewModel.isLoading ? 0.5 : 1.0)
             }
             .navigationDestination(isPresented: $viewModel.isLoggedIn) {
-                Text("You are logged in!")
+                Text("Logged in!")
             }
+            .navigationBarBackButtonHidden(true)
         }
         .alert("Error" ,isPresented: $viewModel.showAlert) {
             Button("Ok") {
@@ -116,6 +117,7 @@ struct LoginView: View {
         }
     }
 }
+
 
 #Preview {
     LoginView()

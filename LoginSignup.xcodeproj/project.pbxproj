@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B35F06752B78CFE200498A81 /* LoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F06742B78CFE200498A81 /* LoggedView.swift */; };
 		B3FEACBA2B77ADCD0072001A /* LoginSignupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACB92B77ADCD0072001A /* LoginSignupApp.swift */; };
 		B3FEACBC2B77ADCD0072001A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEACBB2B77ADCD0072001A /* WelcomeView.swift */; };
 		B3FEACBE2B77ADCE0072001A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEACBD2B77ADCE0072001A /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B35F06742B78CFE200498A81 /* LoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedView.swift; sourceTree = "<group>"; };
 		B3FEACB62B77ADCD0072001A /* LoginSignup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginSignup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FEACB92B77ADCD0072001A /* LoginSignupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupApp.swift; sourceTree = "<group>"; };
 		B3FEACBB2B77ADCD0072001A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B3FEACD12B77DA8E0072001A /* LoginView.swift */,
 				B3FEACBB2B77ADCD0072001A /* WelcomeView.swift */,
 				B3FEACCC2B77B2B70072001A /* RegistrationView.swift */,
+				B35F06742B78CFE200498A81 /* LoggedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FEACE02B77E8870072001A /* ViewModel.swift in Sources */,
+				B35F06752B78CFE200498A81 /* LoggedView.swift in Sources */,
 				B3FEACD22B77DA8E0072001A /* LoginView.swift in Sources */,
 				B3FEACDE2B77E8660072001A /* AppService.swift in Sources */,
 				B3FEACBC2B77ADCD0072001A /* WelcomeView.swift in Sources */,
