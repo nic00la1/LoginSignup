@@ -47,7 +47,7 @@ class AppService {
     
     func logout() async throws -> RequestStatus {
         do {
-            _ = try await account.deleteSession(sessionId: "currentSession")
+            _ = try await account.deleteSessions()
             return .success
             
         } catch {

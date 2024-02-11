@@ -46,7 +46,7 @@ class ViewModel: ObservableObject {
         switch status {
         case .success:
             isLoading = false
-            isLoggedIn = false
+            isLoggedIn = true
             
         case .error(let message):
             isLoading = false
@@ -63,7 +63,7 @@ class ViewModel: ObservableObject {
         switch status {
         case .success:
             isLoading = false
-            isLoggedIn = true
+            isLoggedIn = false
             
         case .error(let message):
             isLoading = false

@@ -98,7 +98,7 @@ struct LoginView: View {
                 .opacity(viewModel.isLoading ? 0.5 : 1.0)
             }
             .navigationDestination(isPresented: $viewModel.isLoggedIn) {
-                Text("Logged in!")
+                LoggedView()
             }
             .navigationBarBackButtonHidden(true)
         }
